@@ -1,0 +1,72 @@
+export const sidebarItems = [
+  {
+    index:1,
+  title:"Dashbaord",
+  path:"",
+  icon:"",
+  tier:"first"
+},
+  {
+    index:2,
+  title:"Class Management",
+  path:"class-management",
+  icon:"",
+  tier:"first"
+},
+  {
+    index:3,
+  title:"Subjects",
+  path:"subjects",
+  icon:"",
+  tier:"first"
+},
+  {
+    index:4,
+  title:"Time Table",
+  path:"timetable",
+  icon:"",
+  tier:"first"
+},
+  {
+    index:5,
+  title:"Houses",
+  path:"houses",
+  icon:"",
+  tier:"first"
+},
+  {
+    index:6,
+  title:"Bills & Payment",
+  path:"bills&payment",
+  icon:"",
+  tier:"first"
+},
+{
+  index:7,
+  title:"Live classes",
+  path:"liveclasses",
+  icon:"",
+  tier:"second"
+},
+{
+  index:8,
+  title:"Live classes",
+  path:"liveclasses",
+  icon:"",
+  tier:"second"
+},
+{
+  index:9,
+  title:"Users",
+  path:"users",
+  icon:"",
+  tier:"third"
+},
+{
+  index:10,
+  title:"Settings",
+  path:"settings",
+  icon:"",
+  tier:"third"
+}
+]
