@@ -1,0 +1,41 @@
+.sidebar-nav b:nth-child(1) {
+  position: absolute;
+  top: -20px;
+  height: 20px;
+  width: 100%;
+  background-color: #eeeeee;
+  overflow: hidden;
+}
+
+.sidebar-nav b:nth-child(1)::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 97%;
+  height: 100%;
+  background-color: #645CAA;
+  border-bottom-right-radius: 20px;
+  overflow: hidden;
+
+}
+
+.sidebar-nav b:nth-child(2) {
+  position: absolute;
+  bottom: -20px;
+  height: 20px;
+  width: 100%;
+  background-color: #eeeeee;
+}
+
+.sidebar-nav b:nth-child(2)::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 97%;
+  height: 100%;
+  background-color: #645CAA;
+  border-top-right-radius: 20px;
+  overflow: hidden;
+}

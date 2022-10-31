@@ -1,7 +1,7 @@
 export const sidebarItems = [
   {
     index:1,
-  title:"Dashbaord",
+  title:"Dashboard",
   path:"",
   icon:"",
   tier:"first"
@@ -50,20 +50,13 @@ export const sidebarItems = [
 },
 {
   index:8,
-  title:"Live classes",
-  path:"liveclasses",
-  icon:"",
-  tier:"second"
-},
-{
-  index:9,
   title:"Users",
   path:"users",
   icon:"",
   tier:"third"
 },
 {
-  index:10,
+  index:9,
   title:"Settings",
   path:"settings",
   icon:"",
