@@ -3,16 +3,17 @@
   top: -20px;
   height: 20px;
   width: 100%;
-  background-color: #eeeeee;
-  overflow: hidden;
+  background-color: #eaeaea;
+  display: none;
+  /* overflow: hidden; */
 }
 
-.sidebar-nav b:nth-child(1)::before {
+.sidebar-nav b:nth-child(1):before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
-  width: 97%;
+  width: 88.9%;
   height: 100%;
   background-color: #645CAA;
   border-bottom-right-radius: 20px;
@@ -25,17 +26,23 @@
   bottom: -20px;
   height: 20px;
   width: 100%;
-  background-color: #eeeeee;
+  background-color: #eaeaea;
+  display: none;
 }
 
-.sidebar-nav b:nth-child(2)::before {
+.sidebar-nav b:nth-child(2):before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
-  width: 97%;
+  width: 88.9%;
   height: 100%;
   background-color: #645CAA;
   border-top-right-radius: 20px;
-  overflow: hidden;
+  /* overflow: hidden; */
+}
+
+.sidebar-nav .active b:nth-child(1),
+.sidebar-nav .active b:nth-child(2) {
+  display: block;
 }

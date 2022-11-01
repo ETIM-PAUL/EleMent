@@ -1,0 +1,13 @@
+.below-box {}
+
+.below-box {
+  content: '';
+  width: 160px;
+  height: 140px;
+  margin-left: 15px;
+  top: 6rem;
+  background-color: #fff;
+  border-radius: 20px;
+  margin-bottom: 30px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px,
+}
