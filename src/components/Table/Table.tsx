@@ -63,12 +63,14 @@ const TableData = () => {
               </TableCell>
               <TableCell align="left" style={{ fontWeight: "500", color: "#645CAA" }}>{row.boarders}</TableCell>
               <TableCell align="left" style={{ fontWeight: "500", color: "#645CAA" }}>{row.day}</TableCell>
-              <TableCell align="left" style={{ fontWeight: "500", color: "#645CAA" }}>
-                <div className='grid'>
-                  <span>{row.dataCompletion}%</span>
-                  <input type="range" value={row.dataCompletion} className="h-[5px] w-[200px]" />
-                </div>
-              </TableCell>
+              {row.dataCompletion !== 0 &&
+                <TableCell align="left" style={{ fontWeight: "500", color: "#645CAA" }}>
+                  <div className='grid'>
+                    <span>{row.dataCompletion}%</span>
+                    <input type="range" value={row.dataCompletion} className="h-[5px] w-[200px]" />
+                  </div>
+                </TableCell>
+              }
               {/* <TableCell align="right">{row.protein}</TableCell> */}
             </TableRow>
           ))}
