@@ -1,8 +1,9 @@
 import React from "react";
 import { SidebarNav } from "./components/Sidebar";
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { Dashboard } from "./components/Dashboard";
 import { NavHeading } from "./components/NavHeading";
+import { DashboardView } from "./containers/Dashboard";
+import { ClassManagement } from "./containers/Class";
 
 
 function App() {
@@ -19,8 +20,8 @@ function App() {
               <div className="fixed md:static bg-main-bg dark:bg-main-dark-bg navbar w-full "></div>
               <NavHeading />
               <Routes>
-                <Route path="/home" element={<Dashboard />} />
-                <Route path="subjects" element={<Dashboard />} />
+                <Route path="/home" element={<DashboardView />} />
+                <Route path="class-management" element={<ClassManagement />} />
               </Routes>
             </div>
           </div>

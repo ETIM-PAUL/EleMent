@@ -1,11 +1,11 @@
 import React, { memo, useState } from 'react';
 import { IoIosArrowDropleft, IoIosArrowDropright } from 'react-icons/io';
-import { cards, bestStudents } from '../../utils/data';
+import { cards, bestStudents, classOverview } from '../../utils/data';
 import { areEqual } from '../../utils/equalChecks';
-import { NavHeading } from '../NavHeading';
 import { ProfileIcon } from '../../assets/profile';
 import "./dashboard.css";
 import { TableData } from '../Table';
+import { Chart } from '../Chart';
 
 type Card = {
   number: string,
@@ -15,6 +15,7 @@ type Card = {
 }
 const Dashboard = () => {
 
+  const tableHeadings = ['class', 'pupils', 'boarders', 'day', 'student data completion']
   const [slide, setSlide] = useState(0);
   const [showNextBtn, setShowNextBtn] = useState(true);
   const [showPrevBtn, setShowPrevBtn] = useState(false);
@@ -89,7 +90,11 @@ const Dashboard = () => {
       </div>
       <div>
         <h3 className='font-semibold'>Class overview</h3>
-        <TableData />
+        <TableData headings={tableHeadings} data={classOverview} />
+      </div>
+      <div className='my-5 rounded-normal'>
+        <h3 className='font-semibold'>How pupils are performing across classes</h3>
+        <Chart />
       </div>
     </div>
   )

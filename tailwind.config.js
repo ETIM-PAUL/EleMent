@@ -19,7 +19,11 @@ module.exports = {
       },
       borderRadius: {
         'normal': '20px',
-      }
+      },
+      gridTemplateColumns: {
+        tableGridBody: ".4fr 0.3fr 0.3fr 0.3fr 0.3fr .5fr 0.15fr",
+        tableGridHead: ".4fr 0.3fr 0.3fr 0.3fr 0.3fr .5fr 0.15fr",
+      },
     },
   },
   plugins: [],

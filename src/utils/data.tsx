@@ -177,11 +177,190 @@ const classOverview = [
     dataCompletion: 89,
   },
   {
-    title: "PRY 6",
-    noOfPupils: 200,
+    title: "TOTAL",
+    noOfPupils: 1520,
     boarders: 0,
-    day: 200,
-    dataCompletion: 94,
+    day: 1520,
+    dataCompletion: 0,
   }
 ]
-export { sidebarItems, cards, bestStudents, classOverview }
+const classes = [
+  {
+    title: "NUR 1A",
+    noOfPupils: 28,
+    boarders: 0,
+    day: 28,
+    dataCompletion: 90,
+    classTeacher: "Joy Ndukwe",
+    teacherInitials: "J.S"
+  },
+  {
+    title: "NUR 1B",
+    noOfPupils: 30,
+    boarders: 0,
+    day: 30,
+    dataCompletion: 88,
+    classTeacher: "Helena Charles",
+    teacherInitials: "H.S"
+  },
+  {
+    title: "NUR 2A",
+    noOfPupils: 32,
+    boarders: 0,
+    day: 32,
+    dataCompletion: 88,
+    classTeacher: "Alice Ntang",
+    teacherInitials: "A.N"
+  },
+  {
+    title: "NUR 2B",
+    noOfPupils: 30,
+    boarders: 0,
+    day: 30,
+    dataCompletion: 89,
+    classTeacher: "Felicity Ubong",
+    teacherInitials: "F.U"
+  },
+  {
+    title: "PRY 1A",
+    noOfPupils: 32,
+    boarders: 0,
+    day: 32,
+    dataCompletion: 94,
+    classTeacher: "Idara Edet",
+    teacherInitials: "I.E"
+  },
+  {
+    title: "PRY 1B",
+    noOfPupils: 31,
+    boarders: 0,
+    day: 31,
+    dataCompletion: 88,
+    classTeacher: "Salome Ukpong",
+    teacherInitials: "S.U"
+  },
+  {
+    title: "PRY 2A",
+    noOfPupils: 34,
+    boarders: 0,
+    day: 34,
+    dataCompletion: 89,
+    classTeacher: "Ita Ita",
+    teacherInitials: "I.I"
+  },
+  {
+    title: "PRY 2B",
+    noOfPupils: 30,
+    boarders: 0,
+    day: 30,
+    dataCompletion: 94,
+    classTeacher: "Helen Imoh",
+    teacherInitials: "H.I"
+  },
+  {
+    title: "PRY 3A",
+    noOfPupils: 27,
+    boarders: 0,
+    day: 27,
+    dataCompletion: 89,
+    classTeacher: "Bisi Ayo",
+    teacherInitials: "B.A"
+  },
+  {
+    title: "PRY 3B",
+    noOfPupils: 30,
+    boarders: 0,
+    day: 30,
+    dataCompletion: 94,
+    classTeacher: "Theresa David",
+    teacherInitials: "T.D"
+  },
+  {
+    title: "PRY 4A",
+    noOfPupils: 40,
+    boarders: 0,
+    day: 40,
+    dataCompletion: 89,
+    classTeacher: "Uwanna Joshua",
+    teacherInitials: "U.J"
+  },
+  {
+    title: "PRY 4B",
+    noOfPupils: 38,
+    boarders: 0,
+    day: 38,
+    dataCompletion: 94,
+    classTeacher: "Atim Etim",
+    teacherInitials: "A.E"
+  },
+  {
+    title: "PRY 5A",
+    noOfPupils: 47,
+    boarders: 0,
+    day: 47,
+    dataCompletion: 89,
+    classTeacher: "Loveth Benson",
+    teacherInitials: "L.B"
+  },
+  {
+    title: "PRY 5B",
+    noOfPupils: 43,
+    boarders: 0,
+    day: 43,
+    dataCompletion: 94,
+    classTeacher: "Daniella Daniels",
+    teacherInitials: "D.D"
+  },
+]
+
+const pupilsPerfomance = [
+  {
+    name: "NUR 1",
+    uv: 60,
+    pv: 63,
+    amt: 53
+  },
+  {
+    name: "NUR 2",
+    uv: 57,
+    pv: 52,
+    amt: 49
+  },
+  {
+    name: "PRY 1",
+    uv: 68,
+    pv: 48,
+    amt: 55
+  },
+  {
+    name: "PRY 2",
+    uv: 55,
+    pv: 59,
+    amt: 60
+  },
+  {
+    name: "PRY 3",
+    uv: 48,
+    pv: 63,
+    amt: 55
+  },
+  {
+    name: "PRY 4",
+    uv: 55,
+    pv: 54,
+    amt: 49
+  },
+  {
+    name: "PRY 5",
+    uv: 50,
+    pv: 49,
+    amt: 60
+  },
+  {
+    name: "PRY 6",
+    uv: 60,
+    pv: 58,
+    amt: 49
+  }
+];
+export { sidebarItems, cards, bestStudents, classOverview, classes, pupilsPerfomance }

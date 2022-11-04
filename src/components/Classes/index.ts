@@ -1,0 +1,1 @@
+export {ClassesTable} from './ClassesTable'

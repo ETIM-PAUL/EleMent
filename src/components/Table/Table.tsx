@@ -1,5 +1,5 @@
 import React, { memo } from 'react'
-import { styled } from '@mui/material/styles';
+import { TfiArrowCircleDown } from "react-icons/tfi";
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -8,8 +8,8 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { areEqual } from '../../utils/equalChecks'
-import { classOverview } from '../../utils/data';
 import "./table.css"
+import { ProfileIcon } from '../../assets/profile';
 
 type Data = {
   title: string,
@@ -19,43 +19,26 @@ type Data = {
   dataCompletion: number,
 }
 
-// const TableCell = styled(TableCell)(({ theme }) => ({
-//   [`&.${tableCellClasses.head}`]: {
-//     backgroundColor: theme.palette.common.black,
-//     color: theme.palette.common.white,
-//   },
-//   [`&.${tableCellClasses.body}`]: {
-//     fontSize: 14,
-//   },
-// }));
+type Props = {
+  headings: Array<string>
+  data: Array<object>
+}
 
-// const StyledTableRow = styled(TableRow)(({ theme }) => ({
-//   '&:nth-of-type(odd)': {
-//     backgroundColor: theme.palette.action.hover,
-//   },
-//   // hide last border
-//   '&:last-child td, &:last-child th': {
-//     border: 0,
-//   },
-// }));
-
-const TableData = () => {
+const TableData = ({ headings, data }: Props) => {
   return (
     <TableContainer component={Paper} className="my-5" style={{ borderRadius: "20px" }}>
-      <Table sx={{ minWidth: 700 }} aria-label="simple table">
-        <TableHead className="">
+      <Table sx={{ minWidth: 800 }} aria-label="simple table">
+        <TableHead >
           <TableRow >
-            <TableCell style={{ fontWeight: "600", color: "#293462" }}>Class</TableCell>
-            <TableCell style={{ fontWeight: "600", color: "#293462" }} align="left">Pupils</TableCell>
-            <TableCell style={{ fontWeight: "600", color: "#293462" }} align="left">Boarders</TableCell>
-            <TableCell style={{ fontWeight: "600", color: "#293462" }} align="left">Day</TableCell>
-            <TableCell style={{ fontWeight: "600", color: "#293462" }} align="left">Student data completion</TableCell>
+            {headings.map((item: any) => (
+              <TableCell style={{ fontWeight: "600", color: "#293462" }} align="left" className='capitalize'>{item}</TableCell>
+            ))}
           </TableRow>
         </TableHead>
         <TableBody>
-          {classOverview.map((row: Data, index: any) => (
+          {data.map((row: any, index: any) => (
             <TableRow key={index}>
-              <TableCell component="th" scope="row" style={{ fontWeight: "500", color: "#645CAA" }}>
+              <TableCell align="left" scope="row" style={{ fontWeight: "500", color: "#645CAA" }}>
                 {row.title}
               </TableCell>
               <TableCell align="left" style={{ fontWeight: "500", color: "#645CAA" }}>
@@ -71,7 +54,6 @@ const TableData = () => {
                   </div>
                 </TableCell>
               }
-              {/* <TableCell align="right">{row.protein}</TableCell> */}
             </TableRow>
           ))}
         </TableBody>
