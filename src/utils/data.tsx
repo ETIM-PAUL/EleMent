@@ -363,4 +363,39 @@ const pupilsPerfomance = [
     amt: 49
   }
 ];
-export { sidebarItems, cards, bestStudents, classOverview, classes, pupilsPerfomance }
+
+const houses = [
+  {
+    title: "Harmans",
+    color: "green",
+    hex: "#00A651",
+    noOfPupils: 124,
+    classTeacher: "Helena Charles",
+    teacherInitials: "H.C"
+  },
+  {
+    title: "Hyde Johnsons",
+    color: "blue",
+    hex: "#0E38E8",
+    noOfPupils: 154,
+    classTeacher: "Bisi Ayo",
+    teacherInitials: "B.A"
+  },
+  {
+    title: "Mckee-Wright",
+    color: "red",
+    hex: "#D61C4E",
+    noOfPupils: 124,
+    classTeacher: "Salome Ukpong",
+    teacherInitials: "S.U"
+  },
+  {
+    title: "Panes",
+    color: "yellow",
+    hex: "#FAD200",
+    noOfPupils: 124,
+    classTeacher: "Ita Ita",
+    teacherInitials: "I.I"
+  },
+]
+export { sidebarItems, cards, bestStudents, classOverview, classes, houses, pupilsPerfomance }

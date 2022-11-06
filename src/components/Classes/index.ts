@@ -1,1 +1,1 @@
-export {ClassesTable} from './ClassesTable'
+export {DragAndDropTable} from './DragAndDropTable'

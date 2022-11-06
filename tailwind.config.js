@@ -22,6 +22,8 @@ module.exports = {
       },
       gridTemplateColumns: {
         tableGridBody: ".4fr 0.3fr 0.3fr 0.3fr 0.3fr .5fr 0.15fr",
+        tableHousesBody: ".3fr 0.3fr .3fr 0.3fr 0.1fr",
+        tableHousesHead: ".3fr 0.3fr .3fr 0.3fr 0.1fr",
         tableGridHead: ".4fr 0.3fr 0.3fr 0.3fr 0.3fr .5fr 0.15fr",
       },
     },

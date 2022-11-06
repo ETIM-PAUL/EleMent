@@ -3,11 +3,13 @@ import { useDrag, useDrop } from "react-dnd";
 import { areEqual } from "../../utils/equalChecks";
 import { TfiArrowCircleDown } from "react-icons/tfi"
 import { ProfileIcon } from "../../assets/profile";
+import { GoPrimitiveDot } from "react-icons/go"
 
 type Props = {
   index: number,
   moveCard: any,
   item: Class,
+  type: string
 }
 interface Class {
   title: string,
@@ -17,9 +19,11 @@ interface Class {
   dataCompletion: number,
   classTeacher: string,
   teacherInitials: string,
+  color: string,
+  hex: string,
 }
 
-const ClassRow = ({ index, moveCard, item }: Props) => {
+const ClassRow = ({ index, moveCard, item, type }: Props) => {
   const key = index;
   const ref = useRef(null);
   const [{ isOver }, drop] = useDrop({
@@ -46,10 +50,10 @@ const ClassRow = ({ index, moveCard, item }: Props) => {
   return (
     <>
       <div
-        className={isOver ? "border-[#DBFD51] border" : "border-[transparent] "}
+        className={isOver ? "border-[#645CAA] border" : "border-[transparent] "}
       />
       <div
-        className="grid grid-cols-tableGridBody items-center bg-white text-main-col uppercase text-sm font-sans rounded-[5px] my-4 hover:cursor-move py-3 px-3"
+        className={`grid items-center bg-white text-main-col uppercase text-sm font-sans rounded-[5px] my-4 hover:cursor-move py-3 px-3 ${type === "houses" ? "grid-cols-tableHousesBody" : "grid-cols-tableGridBody"}`}
         key={index}
         ref={ref}
       >
@@ -58,18 +62,32 @@ const ClassRow = ({ index, moveCard, item }: Props) => {
           <span>{item.title}</span>
         </div>
 
+        {type === "houses" &&
+          <div className="flex gap-2 items-center">
+            <span className="font-sans uppercase" style={{ color: `${item.hex}` }}>
+              {item.color}
+            </span>
+            <span style={{ color: `${item.hex}` }}><GoPrimitiveDot /></span>
+          </div>
+        }
         <span className=" text-main-col normal-case font-sans">
           {item.noOfPupils}
         </span>
-        <span className=" text-main-col normal-case font-sans">
-          {item.boarders}
-        </span>
-        <span className=" text-main-col normal-case font-sans">
-          {item.day}
-        </span>
-        <span className=" text-main-col normal-case font-sans">
-          {item.dataCompletion}
-        </span>
+        {type === "classes" &&
+          <span className=" text-main-col normal-case font-sans">
+            {item.boarders}
+          </span>
+        }
+        {type === "classes" &&
+          <span className=" text-main-col normal-case font-sans">
+            {item.day}
+          </span>
+        }
+        {type === "classes" &&
+          <span className=" text-main-col normal-case font-sans">
+            {item.dataCompletion}
+          </span>
+        }
 
         <div className="flex  items-center gap-2">
           <ProfileIcon width="30" height="30" />

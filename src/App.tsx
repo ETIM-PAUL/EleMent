@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { NavHeading } from "./components/NavHeading";
 import { DashboardView } from "./containers/Dashboard";
 import { ClassManagement } from "./containers/Class";
+import { Houses } from "./containers/Houses";
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
               <Routes>
                 <Route path="/home" element={<DashboardView />} />
                 <Route path="class-management" element={<ClassManagement />} />
+                <Route path="houses" element={<Houses />} />
               </Routes>
             </div>
           </div>

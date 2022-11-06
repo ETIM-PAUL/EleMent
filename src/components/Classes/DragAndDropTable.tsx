@@ -3,7 +3,6 @@ import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
 import update from "immutability-helper";
 import { areEqual } from '../../utils/equalChecks'
-import { classes } from '../../utils/data';
 import { ClassRow } from './ClassRow';
 
 interface Class {
@@ -14,11 +13,12 @@ interface Class {
   dataCompletion: number,
   classTeacher: string,
   teacherInitials: string,
+  color: string,
+  hex: string,
 }
 
-const ClassesTable = () => {
-  const tableHeadings = ['class arm', 'pupils', 'boarders', 'day', 'data completion', 'class teacher', '']
-  const [classesData, setClassesData] = useState(classes)
+const DragAndDropTable = ({ ...props }) => {
+  const [classesData, setClassesData] = useState(props.data)
   const moveCard = useCallback(
     (dragIndex: any, hoverIndex: any) => {
       const dragCard = classesData[dragIndex];
@@ -36,23 +36,24 @@ const ClassesTable = () => {
   return (
     <div>
       {/* Table */}
-      <div className="">
+      <div>
         {/* Table Heading */}
-        <div className="grid grid-cols-tableGridHead text-[#696969] capitalize text-[13px] px-2 font-sans  pt-2">
+        <div className={`grid text-[#696969] capitalize text-[13px] px-2 font-sans  pt-2 ${props.type === "houses" ? "grid-cols-tableHousesHead" : "grid-cols-tableGridHead"}`}>
 
-          {tableHeadings.map((item: string, index) => (
+          {props.tableHeadings.map((item: string, index: number) => (
             <span key={index} className="text-[15px] font-bold">{item}</span>
           ))}
 
         </div>
         {/* Table Body */}
         <DndProvider backend={HTML5Backend}>
-          {classesData.map((item: Class, index) => (
+          {classesData.map((item: Class, index: number) => (
             <ClassRow
               key={index}
               index={index}
               moveCard={moveCard}
               item={item}
+              type={props.type}
             />
           ))}
         </DndProvider>
@@ -62,5 +63,5 @@ const ClassesTable = () => {
 }
 
 
-const ClassesTableMemo = memo(ClassesTable, areEqual)
-export { ClassesTableMemo as ClassesTable }
+const DragAndDropTableMemo = memo(DragAndDropTable, areEqual)
+export { DragAndDropTableMemo as DragAndDropTable }
