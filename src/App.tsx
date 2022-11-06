@@ -5,6 +5,7 @@ import { NavHeading } from "./components/NavHeading";
 import { DashboardView } from "./containers/Dashboard";
 import { ClassManagement } from "./containers/Class";
 import { Houses } from "./containers/Houses";
+import { Subjects } from "./containers/Subjects";
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
               <Routes>
                 <Route path="/home" element={<DashboardView />} />
                 <Route path="class-management" element={<ClassManagement />} />
+                <Route path="subjects" element={<Subjects />} />
                 <Route path="houses" element={<Houses />} />
               </Routes>
             </div>

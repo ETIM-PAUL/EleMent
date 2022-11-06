@@ -398,4 +398,47 @@ const houses = [
     teacherInitials: "I.I"
   },
 ]
-export { sidebarItems, cards, bestStudents, classOverview, classes, houses, pupilsPerfomance }
+
+const subjects = [
+  {
+    name: "Mathematics",
+    shortName: "MTH"
+  },
+  {
+    name: "English Language",
+    shortName: "ENG"
+  },
+  {
+    name: "Computer Knowledge",
+    shortName: "COM"
+  },
+  {
+    name: "Social Studies",
+    shortName: "SOS"
+  },
+  {
+    name: "Music",
+    shortName: "MUS"
+  },
+  {
+    name: "Physical Education",
+    shortName: "PHE"
+  },
+  {
+    name: "Writing",
+    shortName: "WRT"
+  },
+  {
+    name: "Verbal Reasoning",
+    shortName: "VER"
+  },
+  {
+    name: "Quantitative Analysis",
+    shortName: "QUA"
+  },
+  {
+    name: "Drawing",
+    shortName: "DRW"
+  },
+]
+export { sidebarItems, cards, bestStudents, classOverview, classes, houses, pupilsPerfomance, subjects }
