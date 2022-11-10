@@ -6,6 +6,7 @@ import { DashboardView } from "./containers/Dashboard";
 import { ClassManagement } from "./containers/Class";
 import { Houses } from "./containers/Houses";
 import { Subjects } from "./containers/Subjects";
+import { BillsPayment } from "./containers/BillsPayment";
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
                 <Route path="class-management" element={<ClassManagement />} />
                 <Route path="subjects" element={<Subjects />} />
                 <Route path="houses" element={<Houses />} />
+                <Route path="bills-payment" element={<BillsPayment />} />
               </Routes>
             </div>
           </div>

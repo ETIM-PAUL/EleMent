@@ -41,7 +41,7 @@ const sidebarItems = [
   {
     index: 6,
     title: "Bills & Payment",
-    path: "bills&payment",
+    path: "bills-payment",
     icon: "",
     tier: "first"
   },
