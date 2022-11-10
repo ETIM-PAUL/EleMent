@@ -1,5 +1,5 @@
 import React, { memo, useEffect, useState } from 'react'
-import { Profile } from '../../components/BillsPayment'
+import { Bill, Profile } from '../../components/BillsPayment'
 import { areEqual } from '../../utils/equalChecks'
 
 const BillsPayment = () => {
@@ -27,10 +27,18 @@ const BillsPayment = () => {
         })}
       </div>
       <div className="horizontal-line bg-black h-[1px] w-[700px] m-auto"></div>
-      <Profile
-        setCurrentStep={setCurrentStep}
-        currentStep={currentStep}
-      />
+      {currentStep === "Pupil Info" &&
+        <Profile
+          setCurrentStep={setCurrentStep}
+          currentStep={currentStep}
+        />
+      }
+      {currentStep === "Bill Info" &&
+        <Bill
+          setCurrentStep={setCurrentStep}
+          currentStep={currentStep}
+        />
+      }
     </div>
   )
 }
