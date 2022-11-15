@@ -30,9 +30,9 @@ const Profile = ({ setCurrentStep, currentStep }: Props) => {
           email: "",
           address: "",
         }}
-        onSubmit={(values, { setSubmitting }) => {
+        onSubmit={(values, { setSubmitting }: any) => {
           setTimeout(() => {
-            setSubmitting(true);
+            setSubmitting();
             console.log(values)
           }, 1000);
         }}
@@ -46,6 +46,14 @@ const Profile = ({ setCurrentStep, currentStep }: Props) => {
                 placeholder="Please input pupil's name"
                 type="text"
                 name="name"
+                required={true}
+                asterisk="*"
+              />
+              <InputField
+                label="Roll Number"
+                placeholder="Please input pupil's roll number"
+                type="number"
+                name="rollNumber"
                 required={true}
                 asterisk="*"
               />
@@ -81,7 +89,7 @@ const Profile = ({ setCurrentStep, currentStep }: Props) => {
                   })}
                 </Select>
               </div>
-              <div className="flex gap-2 my-2">
+              <div className="flex gap-2 my-2 ">
                 {currentStep !== "Pupil Info" &&
                   <Button
                     disabled={false}

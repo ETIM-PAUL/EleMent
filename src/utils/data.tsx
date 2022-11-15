@@ -52,13 +52,13 @@ const sidebarItems = [
     icon: "",
     tier: "second"
   },
-  {
-    index: 8,
-    title: "Users",
-    path: "users",
-    icon: "",
-    tier: "third"
-  },
+  // {
+  //   index: 8,
+  //   title: "Users",
+  //   path: "users",
+  //   icon: "",
+  //   tier: "third"
+  // },
   {
     index: 9,
     title: "Settings",

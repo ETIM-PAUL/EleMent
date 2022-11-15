@@ -15,7 +15,7 @@ const Select = ({ children, ...props }: any) => {
       <label className="text-sm font-semibold flex gap-1 items-center">
         {props.label} <span className="text-[#eb5757] mt-1">{props.asterisk}</span>
       </label>
-      <select {...field} {...props} className="my-[10px] w-full h-12 bg-white rounded-[10px] h-[35px] py-3 px-4 border-[#645CAA] border">
+      <select {...field} {...props} className="my-[10px] w-full h-full bg-white rounded-[10px] h-[35px] py-3 px-4 border-[#645CAA] border">
         {children}
       </select>
       {(meta.touched && meta.error) ||

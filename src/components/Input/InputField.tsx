@@ -18,7 +18,7 @@ const InputField = ({ ...props }: Props) => {
       <label className="text-sm font-semibold flex gap-1 items-center">
         {props.label} <span className="text-[#eb5757] mt-1">{props.asterisk}</span>
       </label>
-      <input {...field} {...props} className="my-[10px] h-12 w-full bg-white rounded-[10px] h-[35px] py-3 px-4 border-[#645CAA] border" />
+      <input {...field} {...props} className="my-[10px] h-full w-full bg-white rounded-[10px] h-[35px] py-3 px-4 border-[#645CAA] border" />
       {(meta.touched && meta.error) ||
         (meta.error && meta.value !== "") ||
         (meta.error && meta.value === "") ? (

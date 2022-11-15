@@ -1,6 +1,6 @@
 import React, { memo, useCallback } from 'react'
 import { areEqual } from '../../utils/equalChecks'
-import { yupProfileValidation } from '../../utils/yupValidation';
+import { yupBillValidation, yupProfileValidation } from '../../utils/yupValidation';
 import { InputField, Select } from '../Input';
 import { Formik, Form } from "formik";
 import { TiCancel } from "react-icons/ti"
@@ -15,7 +15,7 @@ const Bill = ({ setCurrentStep, currentStep }: Props) => {
   const bills = ["School Fee", "Lesson Fee", "PTA Levy", "Transportaion Fee", "Sports Wear Levy",]
   const nextStep = useCallback((e: any) => {
     e.preventDefault();
-    setCurrentStep("Bill Info");
+    setCurrentStep("Confirm Payment");
   }, []);
   const cancelPayment = useCallback((e: any) => {
     e.preventDefault();
@@ -27,16 +27,16 @@ const Bill = ({ setCurrentStep, currentStep }: Props) => {
         validateOnMount
         initialValues={{
           tellerNumber: "",
-          date: "",
+          DOP: "",
           billType: "",
         }}
-        onSubmit={(values, { setSubmitting }) => {
+        onSubmit={(values, { setSubmitting }: any) => {
           setTimeout(() => {
-            setSubmitting(true);
+            setSubmitting();
             console.log(values)
           }, 1000);
         }}
-        validationSchema={yupProfileValidation}
+        validationSchema={yupBillValidation}
       >
         {({ setFieldValue, isValid }) => {
           return (
@@ -71,7 +71,7 @@ const Bill = ({ setCurrentStep, currentStep }: Props) => {
                   })}
                 </Select>
               </div>
-              <div className="flex gap-2 my-2">
+              <div className="flex gap-2 my-2 justify-center">
                 {currentStep !== "Pupil Info" &&
                   <Button
                     disabled={false}
