@@ -1,21 +1,11 @@
-import React, { memo, useEffect, useState } from 'react'
-import { LineChart, Line, CartesianGrid, XAxis, YAxis } from "recharts";
+import React, { memo, useState } from 'react'
+import { LineChart, Line, CartesianGrid, XAxis, YAxis, ResponsiveContainer } from "recharts";
 import { pupilsPerfomance } from '../../utils/data';
 import { areEqual } from '../../utils/equalChecks'
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
-import Select, { SelectChangeEvent } from '@mui/material/Select';
-import { Box, ThemeProvider, createTheme } from '@mui/system';
-
-const theme = createTheme({
-  palette: {
-    text: {
-      primary: '#645CAA',
-      secondary: '#46505A',
-    },
-  },
-});
+import Select from '@mui/material/Select';
 
 const Chart = () => {
   const [dataa, setDataa] = useState("uv");
@@ -34,33 +24,29 @@ const Chart = () => {
   };
 
   return (
-    <div className='bg-white rounded-normal py-4 my-5'>
-      <FormControl sx={{ color: '#645CAA', mx: 5, mb: 2, minWidth: 250, font: 10 }} size="small">
-        <InputLabel id="demo-select-small">Session</InputLabel>
-        <Select
-          labelId="demo-select-small"
-          id="demo-select-small"
-          label="Session"
-          onChange={(e) => handleChange(e)}
-          sx={{ color: '#645CAA' }}
-        >
-          <MenuItem sx={{ color: '#645CAA' }} value="Third term 2022/2023">
-            Third term 2022/2023
-          </MenuItem>
-          <MenuItem sx={{ color: '#645CAA' }} value="Second term 2022/2023">Second term 2022/2023</MenuItem>
-          <MenuItem sx={{ color: '#645CAA' }} value="First term 2022/2023">First term 2022/2023</MenuItem>
-        </Select>
-      </FormControl>
+    <div className='bg-white rounded-normal py-4 my-5 text-main-col'>
+      <select
+        onChange={(e) => handleChange(e)}
+        className="text-xs p-1 rounded-[5px] mx-8 mb-2 border-[1px]">
+        <optgroup>
+          <option value="Third term 2022/2023">Third term 2022/2023</option>
+          <option value="Second term 2022/2023">Second term 2022/2023</option>
+          <option value="First term 2022/2023">First term 2022/2023</option>
+        </optgroup>
+      </select>
 
       {/* Chart */}
-      <LineChart width={800} height={450} data={pupilsPerfomance} >
-        {/* <Legend /> */}
-        <CartesianGrid strokeDasharray="3" />
+      <ResponsiveContainer height={450}>
 
-        <XAxis dataKey="name" />
-        <YAxis dataKey="uv" />
-        <Line type="monotone" dot={false} dataKey={dataa} stroke="#8884d8" strokeWidth={2} />
-      </LineChart>
+        <LineChart data={pupilsPerfomance} margin={{ top: 20, right: 50, left: 0, bottom: 0 }}>
+          {/* <Legend /> */}
+          <CartesianGrid strokeDasharray="3" />
+
+          <XAxis dataKey="name" />
+          <YAxis dataKey="uv" />
+          <Line type="monotone" dot={false} dataKey={dataa} stroke="#645CAA" strokeWidth={2} />
+        </LineChart>
+      </ResponsiveContainer>
     </div>
 
   )

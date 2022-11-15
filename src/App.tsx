@@ -7,6 +7,7 @@ import { ClassManagement } from "./containers/Class";
 import { Houses } from "./containers/Houses";
 import { Subjects } from "./containers/Subjects";
 import { BillsPayment } from "./containers/BillsPayment";
+import { LiveClass } from "./containers/LiveClass";
 
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
                 <Route path="subjects" element={<Subjects />} />
                 <Route path="houses" element={<Houses />} />
                 <Route path="bills-payment" element={<BillsPayment />} />
+                <Route path="liveclasses" element={<LiveClass />} />
               </Routes>
             </div>
           </div>
